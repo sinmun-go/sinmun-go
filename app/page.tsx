@@ -19,7 +19,7 @@ export default function FAQPage() {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
 
   useEffect(() => {
-    fetch('/api/faq')
+    fetch('/api/faq') // API 엔드포인트 수정
       .then((res) => res.json())
       .then(setFaqs)
       .catch(console.error);
@@ -35,7 +35,7 @@ export default function FAQPage() {
             <p className="text-gray-600">{faq.qstnCntnCl}</p>
             <details className="mt-2">
               <summary className="cursor-pointer text-blue-600">답변 보기</summary>
-              <p className="mt-1">{faq.ansCntnCl}</p>
+              <div dangerouslySetInnerHTML={{ __html: faq.ansCntnCl }} className="mt-1" />
             </details>
             <p className="text-sm text-gray-400 mt-2">
               등록일: {faq.regDate} / 부서: {faq.deptName}
