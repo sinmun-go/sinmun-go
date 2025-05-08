@@ -10,8 +10,8 @@ function stripHtmlWithDOM(html: string): string {
   try {
     const dom = new JSDOM(html);
     const text = dom.window.document.body.textContent || '';
-    console.log('stripHtmlWithDOM 입력:', html);
-    console.log('stripHtmlWithDOM 출력:', text.trim());
+    // console.log('stripHtmlWithDOM 입력:', html);
+    // console.log('stripHtmlWithDOM 출력:', text.trim());
     return text.trim();
   } catch (error) {
     console.error('stripHtmlWithDOM 처리 오류:', error, '입력:', html);
@@ -30,7 +30,7 @@ export async function GET() {
       qstnCntnCl: stripHtmlWithDOM(faq.qstnCntnCl),
     }));
 
-    console.log('정리된 FAQ 데이터 (DOMParser):', cleanedFaqs);
+    // console.log('정리된 FAQ 데이터 (DOMParser):', cleanedFaqs);
 
     return NextResponse.json(cleanedFaqs);
   } catch (error) {
