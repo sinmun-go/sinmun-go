@@ -286,3 +286,27 @@ ORDER BY cnt DESC;
 |전라남도 영암군|1|
 |식품안전정보원|1|
 
+## FE
+```bash
+$ npx create-next-app@15.3.1 sinmun-go-fe
+$ tree -La 1 sinmun-go-fe
+sinmun-go-fe
+├── .gitignore
+├── README.md
+├── app
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── node_modules
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+└── tsconfig.json
+
+$ cd sinmun-go-fe
+$ rm README.md .gitignore
+$ mv * ../
+$ cd ../
+$ rm -rf sinmun-go-fe
+```
